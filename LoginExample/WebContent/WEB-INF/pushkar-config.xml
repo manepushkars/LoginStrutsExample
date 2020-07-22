@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+	<form-beans>
+		<form-bean name="loginForm" type="com.pushkar.struts1.LoginForm">
+		</form-bean>
+		<action-mapping>
+			<action 
+				path="/LoginSubmit" 
+				name="loginForm"
+				scope="session"
+				validate="true"
+				type="com.pushkar.struts1.LoginAction"
+				input="/login.jsp">
+			</action>
+			<forward name="success" path="/home.jsp"/>
+			<forward name="failed" path="/login.jsp"/>
+		</action-mapping>
+		<message-resources parameter="com.pushkar.struts1.message"/>
+		
+	</form-beans>
+</struts-config>
